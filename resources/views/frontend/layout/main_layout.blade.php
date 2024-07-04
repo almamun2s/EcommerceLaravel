@@ -23,7 +23,7 @@
     <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" />
 </head>
 
-<body>
+<body class="sub_page">
     <div class="hero_area">
         <!-- header section strats -->
         @include('frontend.layout.header')
