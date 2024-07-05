@@ -33,6 +33,8 @@
     <link href="{{ asset('admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
+    <!-- jQuery-->
+    <script src="{{ asset('admin/libs/jquery/jquery.min.js') }}"></script>
 
     <!-- Sweet alert-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
@@ -99,7 +101,6 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
-    <script src="{{ asset('admin/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('admin/libs/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('admin/libs/simplebar/simplebar.min.js') }}"></script>
@@ -121,14 +122,24 @@
     <script src="{{ asset('admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
-    <!-- Dashboard inti -->
+    <!-- Dashboard init -->
     <script src="{{ asset('admin/js/pages/dashboard.init.js') }}"></script>
 
-    <!-- DataTables inti -->
+    <!-- DataTables init -->
     <script src="{{ asset('admin/js/pages/datatables.init.js') }}"></script>
 
-    <!-- App js -->
-
+    <!-- Form Editor js -->
+    <script src="{{ asset('admin/js/app.js') }}"></script>
+    <!-- tinymce js -->
+    <script src="https://cdn.tiny.cloud/1/7wyduspokn9tbg1s1ash2crnk8rnzaelrvkqtf9teeq5i3x3/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#tinymce', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'code table lists',
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+        });
+    </script>
     <!-- Custom js -->
     <script src="{{ asset('admin/js/custom.js') }}"></script>
 </body>

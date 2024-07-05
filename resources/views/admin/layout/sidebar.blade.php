@@ -27,9 +27,23 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->routeIs('admin.category.index') ? 'mm-active' : '' }}">
+                <li class="
+                    @if (request()->routeIs('admin.category.index') ||
+                            request()->routeIs('admin.category.edit') ||
+                            request()->routeIs('admin.category.create')) mm-active @endif
+                ">
                     <a href="{{ route('admin.category.index') }}" class="waves-effect">
                         <i class="fa-solid fa-list"></i><span>Category</span>
+                    </a>
+                </li>
+
+                <li class="
+                    @if (request()->routeIs('admin.product.index') ||
+                            request()->routeIs('admin.product.edit') ||
+                            request()->routeIs('admin.product.create')) mm-active @endif
+                ">
+                    <a href="{{ route('admin.product.index') }}" class="waves-effect">
+                        <i class="fa-solid fa-shirt"></i><span>Product</span>
                     </a>
                 </li>
 

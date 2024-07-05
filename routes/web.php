@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,5 @@ Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->g
     Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('/category', CategoryController::class);
+    Route::resource('/product', ProductController::class);
 });
