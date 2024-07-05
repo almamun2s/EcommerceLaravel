@@ -3,11 +3,17 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/cart', [CartController::class, 'show_cart'])->name('cart');
+Route::get('/cart/{product}/add', [CartController::class, 'add_to_cart'])->name('cart.add');
+Route::get('/cart/{id}/add_qty', [CartController::class, 'add_qty'])->name('cart.add_qty');
+Route::get('/cart/{id}/sub_qty', [CartController::class, 'sub_qty'])->name('cart.sub_qty');
+Route::get('/cart/{id}/remove', [CartController::class, 'remove_from_cart'])->name('cart.remove');
 
 
 Route::middleware('auth')->group(function () {
