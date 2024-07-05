@@ -31,8 +31,13 @@
     <link href="{{ asset('admin/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="{{ asset('admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
     <link href="{{ asset('admin/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+
+    <!-- Sweet alert-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
 
 </head>
 
@@ -116,10 +121,16 @@
     <script src="{{ asset('admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
+    <!-- Dashboard inti -->
     <script src="{{ asset('admin/js/pages/dashboard.init.js') }}"></script>
 
+    <!-- DataTables inti -->
+    <script src="{{ asset('admin/js/pages/datatables.init.js') }}"></script>
+
     <!-- App js -->
-    <script src="{{ asset('admin/js/app.js') }}"></script>
+
+    <!-- Custom js -->
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
 </body>
 
 </html>

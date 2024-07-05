@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -17,7 +18,12 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 
+Route::get('/dashboard', function(){
+    return redirect()->route('admin.dashboard');
+})->name('dashboard');
 
-Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('/dashboard')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('/category', CategoryController::class);
 });

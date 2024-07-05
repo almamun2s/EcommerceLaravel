@@ -21,9 +21,15 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
-                <li class="{{ request()->routeIs('dashboard') ? 'mm-active' : '' }}">
+                <li class="{{ request()->routeIs('admin.dashboard') ? 'mm-active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="waves-effect">
                         <i class="fa-solid fa-table-columns"></i><span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->routeIs('admin.category.index') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.category.index') }}" class="waves-effect">
+                        <i class="fa-solid fa-list"></i><span>Category</span>
                     </a>
                 </li>
 
