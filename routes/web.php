@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,11 @@ Route::get('/cart/{product}/add', [CartController::class, 'add_to_cart'])->name(
 Route::get('/cart/{id}/add_qty', [CartController::class, 'add_qty'])->name('cart.add_qty');
 Route::get('/cart/{id}/sub_qty', [CartController::class, 'sub_qty'])->name('cart.sub_qty');
 Route::get('/cart/{id}/remove', [CartController::class, 'remove_from_cart'])->name('cart.remove');
+
+Route::post('/checkout', [CheckoutController::class, 'checkout'] )->name('checkout');
+Route::get('/checkout_success', [CheckoutController::class, 'success'])->name('checkout.success');
+Route::get('/checkout_cancel', [CheckoutController::class, 'cancel'])->name('checkout.cancel');
+Route::post('/webhook', [CheckoutController::class, 'webhook'])->name('checkout.webhook');
 
 
 Route::middleware('auth')->group(function () {

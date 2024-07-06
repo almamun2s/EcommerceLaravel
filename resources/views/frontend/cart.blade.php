@@ -59,6 +59,13 @@
 
                 @endif
             </div>
+
+            <div class="col-md-12">
+                <form action="{{ route('checkout') }}" method="post" class="float-right">
+                    @csrf
+                    <input type="submit" value="Proceed to checkout" class="form-control bg-primary text-white">
+                </form>
+            </div>
         </div>
     </div>
 @endsection
